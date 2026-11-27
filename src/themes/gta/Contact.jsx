@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaEnvelope, FaWhatsapp, FaCalendarAlt, FaGithub, FaLinkedin } from 'react-icons/fa'
 import useContactForm from '../../hooks/useContactForm'
 import { profile } from '../../data/profile'
+import { unlock } from './game'
 
 const messages = {
     sent: 'Transmission sent. Expect a reply soon.',
@@ -11,6 +12,7 @@ const messages = {
 export default function Contact() {
     const { form, status, onChange, onSubmit } = useContactForm()
     const [decrypted, setDecrypted] = useState(false)
+    useEffect(() => { if (status === 'sent') unlock('dispatch') }, [status])
 
     return (
         <>
@@ -67,7 +69,7 @@ export default function Contact() {
                                     WhatsApp:{' '}
                                     {decrypted
                                         ? <a href={profile.socials.whatsapp} target="_blank" rel="noreferrer">{profile.whatsapp}</a>
-                                        : <button type="button" onClick={() => setDecrypted(true)} aria-label="Decrypt WhatsApp number">[Encrypted]</button>}
+                                        : <button type="button" onClick={() => { setDecrypted(true); unlock('decrypted') }} aria-label="Decrypt WhatsApp number">[Encrypted]</button>}
                                 </span>
                             </li>
                             <li><FaCalendarAlt aria-hidden="true" /><span><a href={profile.calendly} target="_blank" rel="noreferrer">Book a meeting</a></span></li>

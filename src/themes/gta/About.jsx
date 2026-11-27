@@ -3,8 +3,10 @@ import { FaDownload } from 'react-icons/fa'
 import { profile } from '../../data/profile'
 import { skillGroups } from '../../data/skills'
 import { Portrait } from './parts'
+import { achievements, unlock, useGame } from './game'
 
 export default function About() {
+    const { done } = useGame()
     return (
         <>
             <div className="g-split">
@@ -77,12 +79,13 @@ export default function About() {
                 <h2 id="g-pack" className="g-h g-h--tight">Resume &amp; data pack</h2>
                 <div className="g-resume">
                     <div className="g-resume-actions">
-                        <a href={profile.cv} download className="g-btn g-btn--hot cut-a"><FaDownload aria-hidden="true" /> Download resume.pdf</a>
+                        <a href={profile.cv} download onClick={() => unlock('data')} className="g-btn g-btn--hot cut-a"><FaDownload aria-hidden="true" /> Download resume.pdf</a>
                         <a href="/#projects" className="g-btn g-btn--ghost cut-a">Select mission</a>
                     </div>
                     <p className="g-resume-stat">
                         Name: {profile.name} / Class: Full-Stack<br />
-                        Stamina: 100% / Rep level: 99
+                        Stamina: 100% / Rep level: 99<br />
+                        Achievements: {done.length}/{Object.keys(achievements).length}
                     </p>
                 </div>
             </section>

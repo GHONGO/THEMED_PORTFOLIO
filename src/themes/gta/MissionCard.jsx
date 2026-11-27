@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import Briefing from './Briefing'
+import { unlock } from './game'
 
 // One project, presented as a "mission". `compact` = the tall home-page variant.
 export default function MissionCard({ project: p, compact = false }) {
+    const dialog = useRef(null)
+    const open = () => { dialog.current?.showModal(); unlock('briefed') }
     const extra = p.tech.length - 3
     const completion = p.soon ? <b className="g-warn">In progress</b> : <b className="g-ok">100%</b>
     const level = { Easy: 'g-ok', Medium: 'g-warn', Hard: 'g-bad' }[p.difficulty] || ''
@@ -26,9 +30,9 @@ export default function MissionCard({ project: p, compact = false }) {
                         {p.soon ? (
                             <span className={`g-btn cut-a${compact ? ' g-btn--block' : ''}`} aria-disabled="true">Coming soon</span>
                         ) : (
-                            <a href={p.link} target="_blank" rel="noreferrer" className={`g-btn cut-a${compact ? ' g-btn--block' : ''}`}>
+                            <button type="button" onClick={open} className={`g-btn cut-a${compact ? ' g-btn--block' : ''}`}>
                                 Select mission<span className="sr-only"> {p.title}</span>
-                            </a>
+                            </button>
                         )}
                         {!compact && (
                             <p className="g-meta">
@@ -39,6 +43,7 @@ export default function MissionCard({ project: p, compact = false }) {
                     </div>
                 </div>
             </div>
+            <Briefing project={p} ref={dialog} />
         </article>
     )
 }

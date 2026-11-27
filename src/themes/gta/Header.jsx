@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import './gta.css'
 import ThemeSwitcher from '../../components/ThemeSwitcher'
 import { sections } from '../../data/nav'
+import { Radar, Money, Toasts } from './Hud'
 
 // Fonts load via a <link> (not a CSS @import) so a blocked/failed font request can never
 // take the whole theme down with it - the CSS falls back to system condensed fonts.
@@ -15,18 +16,6 @@ function useGtaFonts() {
         link.dataset.gtaFonts = ''
         document.head.appendChild(link)
     }, [])
-}
-
-function Minimap() {
-    return (
-        <div className="g-map-wrap" aria-hidden="true">
-            <svg className="g-map" viewBox="0 0 60 44">
-                <path d="M0 30 60 10M18 0l12 44M44 0l-4 44M0 12l60 22" fill="none" stroke="#6f7f74" strokeWidth="1.5" />
-                <circle cx="30" cy="22" r="2.6" fill="#5be37a" />
-            </svg>
-            <div className="g-map-bars"><i /><i /></div>
-        </div>
-    )
 }
 
 export default function Header({ active }) {
@@ -55,9 +44,11 @@ export default function Header({ active }) {
 
             <div className="g-hud">
                 <ThemeSwitcher />
-                <Minimap />
-                <span className="g-money" aria-hidden="true">$106800</span>
+                <span className="g-keys" aria-hidden="true">Keys 1-5</span>
+                <Radar />
+                <Money />
             </div>
+            <Toasts />
         </header>
     )
 }

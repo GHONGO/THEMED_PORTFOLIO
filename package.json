@@ -33,17 +33,17 @@
     "tailwindcss": "^4.1.17",
     "vite": "^7.2.2"
   },
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "description": "A themeable personal portfolio for Griffin Hongo, featuring Classic and GTA-inspired designs.",
   "main": "eslint.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ranking-254/Portfolio-.git"
+    "url": "git+https://github.com/GHONGO/THEMED_PORTFOLIO.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ranking-254/Portfolio-/issues"
+    "url": "https://github.com/GHONGO/THEMED_PORTFOLIO/issues"
   },
-  "homepage": "https://github.com/Ranking-254/Portfolio-#readme"
+  "homepage": "https://github.com/GHONGO/THEMED_PORTFOLIO#readme"
 }
