@@ -14,7 +14,7 @@ export default function Home() {
                     <p className="g-role">{profile.role} / Creative Technologies</p>
                 </div>
                 <p className="g-tagline">
-                    Building immersive digital experiences based in <b>Los Santos</b> <span aria-hidden="true">🌴</span>
+                    Building immersive digital experiences based in <b>Nairobi City</b> <span aria-hidden="true">🌴</span>
                 </p>
             </section>
 
