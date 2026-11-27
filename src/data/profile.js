@@ -11,7 +11,7 @@ export const profile = {
     formEndpoint: 'https://formspree.io/f/mkowekga',
     calendly: 'https://calendly.com/williamghongo/schedule-meeting',
 
-    email: 'grif@gmail.com', // TODO: confirm this is the address you want published
+    email: 'williamghongo@gmail.com', // TODO: confirm this is the address you want published
     whatsapp: '+254 740 719 552',
     socials: {
         github: 'https://github.com/GHONGO',
@@ -21,7 +21,7 @@ export const profile = {
 
     // TODO: placeholder employers from the mockup - replace with your real experience.
     experience: [
-        { role: 'Lead Developer', company: 'LS Digital', period: '2024 - Present', summary: 'Headed web experiences, interactive maps, and client projects.' },
+        { role: 'Web Administrator', company: 'Dr.Kennedy Hongo Foundation', period: '2024 - Present', summary: 'Headed web experiences, interactive maps, and client projects.' },
         { role: 'Full-Stack Engineer', company: 'Vinewood Labs', period: '2022 - 2024', summary: 'Built robust backend services and web-based applications.' },
     ],
 
