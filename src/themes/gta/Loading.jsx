@@ -30,7 +30,7 @@ export default function Loading({ onDone }) {
     return (
         <div className="g-loading" role="dialog" aria-modal="true" aria-label="Loading">
             <p className="g-logo">Griffin Hongo</p>
-            <p className="g-load-title">Loading Los Santos...</p>
+            <p className="g-load-title">Loading Nairobi City...</p>
             <div className="g-load-bar" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}><i style={{ width: `${pct}%` }} /></div>
             <p className="g-load-pct">{pct}%</p>
             <p className="g-load-tip">{tip}</p>
