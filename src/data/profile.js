@@ -22,7 +22,7 @@ export const profile = {
     // TODO: placeholder employers from the mockup - replace with your real experience.
     experience: [
         { role: 'Web Administrator', company: 'Dr.Kennedy Hongo Foundation', period: '2024 - Present', summary: 'Headed web experiences, interactive maps, and client projects.' },
-        { role: 'Full-Stack Engineer', company: 'Vinewood Labs', period: '2022 - 2024', summary: 'Built robust backend services and web-based applications.' },
+        { role: 'Full-Stack Engineer', company: 'CPF Financial Services', period: '2022 - 2024', summary: 'Built robust backend services and web-based applications.' },
     ],
 
     // TODO: self-rated skill levels (GTA About page stat bars).
